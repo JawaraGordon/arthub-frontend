@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import ArtistsCard from './ArtistsCard';
+import Search from './Search';
 
 function Artists({ handleUpdateLike }) {
   const [artists, setArtists] = useState([]);
-  // console.log(artists);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     fetch('http://localhost:9292/artists')
@@ -15,7 +16,7 @@ function Artists({ handleUpdateLike }) {
   }, []);
 
   function displayedArtists() {
-    return artists.map((artist) => (
+    return filteredArtists.map((artist) => (
       <ArtistsCard
         key={artists.id}
         artists={artist}
@@ -24,7 +25,15 @@ function Artists({ handleUpdateLike }) {
     ));
   }
 
-  return <div className="list">{displayedArtists()}</div>;
+  const filteredArtists = artists.filter((artist) => {
+    return artist.name.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+
+  return <>
+  <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+  <div className="list">{displayedArtists()}</div>;
+  </>
+  
 }
 
 export default Artists;

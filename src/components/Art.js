@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Search from './Search';
 import ArtCard from './ArtCard';
 
 function Art() {
 
   const [art, setArt] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+
 
   useEffect(() => {
     fetch('http://localhost:9292/art')
@@ -31,8 +30,7 @@ function Art() {
 
   return (
     <div>
-      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <div className="about"></div>
+      
       <div className="list">{displayedArt()}</div>
     </div>
   );

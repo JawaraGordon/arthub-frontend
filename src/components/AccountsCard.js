@@ -11,7 +11,8 @@ function AccountsCard({ accounts }) {
         <div className="title">
           <h2>{name}</h2>
         </div>
-        <h3>{account_number}</h3>
+        <h3>Account #: {account_number}</h3>
+        <br></br>
         <h4>Location: {location}</h4>
         <h4>Account Type: {account_type}</h4>
       </div>
