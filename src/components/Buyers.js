@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SignUp() {
+function Buyers() {
   function handleSubmit(e) {
     e.preventDefault();
   }
@@ -8,7 +8,7 @@ function SignUp() {
   return (
     <div className="court-form">
       <form onSubmit={handleSubmit} className="court-form">
-        <img src=""></img>
+        {/* <img src=""></img> */}
         <br></br>
         <input
           type="text"
@@ -50,4 +50,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default Buyers;

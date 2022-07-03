@@ -1,56 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import ArtistsCard from './ArtistsCard';
 
-function Artists({ courts, handleUpdateLike }) {
-  const {
-    id,
-    name,
-    image,
-    likes,
-    address,
-    google,
-    avatar,
-    email,
-    phone,
-    genre,
-  } = courts;
+function Artists({ handleUpdateLike }) {
+  const [artists, setArtists] = useState([]);
+  // console.log(artists);
 
-  function handleLikeClick() {
-    const updateObj = {
-      likes: likes + 1,
-    };
-
-    fetch(`http://localhost:9292/artists/${id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(updateObj),
-    })
+  useEffect(() => {
+    fetch('http://localhost:9292/artists')
       .then((r) => r.json())
-      .then(handleUpdateLike);
+      .then((artistsArr) => {
+        setArtists(artistsArr);
+        // console.log(artistsArr);
+      });
+  }, []);
+
+  function displayedArtists() {
+    return artists.map((artist) => (
+      <ArtistsCard
+        key={artists.id}
+        artists={artist}
+        // handleUpdateLike={handleUpdateLike}
+      />
+    ));
   }
 
-  return (
-    <div>
-      <div className="card">
-        <div className="title">
-          <h2>{name}</h2>
-        </div>
-        <h3>{avatar}</h3>
-        {/* <div className="address" onClick={() => window.open(google)}>
-          <h3>{address}</h3>
-        </div> */}
-        {/* <img src={image} alt={name} className="court-image" /> */}
-        <h4>Email: {email}</h4>
-        <h4>Phone: {phone}</h4>
-        <h4>Genre / Medium: {genre}</h4>
-        {/* <p>{likes} Likes </p> */}
-        {/* <button onClick={handleLikeClick} className="like-btn">
-          Like {'🏀'}
-        </button> */}
-      </div>
-    </div>
-  );
+  return <div className="list">{displayedArtists()}</div>;
 }
 
 export default Artists;
