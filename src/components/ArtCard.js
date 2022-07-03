@@ -11,7 +11,8 @@ function ArtCard({ art }) {
         <div className="title">
           <h2>{name}</h2>
         </div>
-        <h3>{image_url}</h3>
+        <img src={image_url} alt={name} className="court-image" />
+        <br></br>
         <h4>Genre: {genre}</h4>
         <h4>Location: {location}</h4>
         <h4>View: {link}</h4>
