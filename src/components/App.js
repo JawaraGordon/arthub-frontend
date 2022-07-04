@@ -1,18 +1,15 @@
-import React, {useState, useEffect}from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import Accounts from './Accounts';
 import Artists from './Artists';
 import Buyers from './Buyers';
 import Art from './Art';
-import ArtEditPage from './ArtEditPage';
+import ArtEditPage from './AddArt';
 // import ArtistsContainer from './ArtistsContainer';
 
 function App() {
-  
-
   const [art, setArt] = useState([]);
-
 
   useEffect(() => {
     fetch('http://localhost:9292/art')
@@ -28,12 +25,11 @@ function App() {
 
       <Switch>
         <Route exact path="/accounts">
-          <Accounts
-          />
+          <Accounts />
         </Route>
 
         <Route path="/artists">
-          <Artists/>
+          <Artists />
         </Route>
 
         <Route path="/buyers">
@@ -41,14 +37,11 @@ function App() {
         </Route>
 
         <Route path="/art">
-          <Art key={art.id}
-        art={art}/>
+          <Art key={art.id} art={art} />
         </Route>
 
-        <Route path="/arteditpage">
-          <ArtEditPage key={art.id}
-        art={art}
-        setArt={setArt}/>
+        <Route path="/addart">
+          <ArtEditPage key={art.id} art={art} setArt={setArt} />
         </Route>
       </Switch>
     </div>

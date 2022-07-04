@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function ArtEditPage({ setArt }) {
+function AddArt({ setArt }) {
   const [formState, setFormState] = useState({
     name: '',
     image_url: '',
@@ -101,4 +101,4 @@ function ArtEditPage({ setArt }) {
     </div>
   );
 }
-export default ArtEditPage;
+export default AddArt;
