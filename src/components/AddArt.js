@@ -6,9 +6,9 @@ function AddArt({ setArt }) {
     name: '',
     image_url: '',
     genre: '',
-    link: ''
+    link: '',
   });
-  const history = useHistory();
+  // const history = useHistory();
 
   function handleChange(e) {
     setFormState({
@@ -22,7 +22,6 @@ function AddArt({ setArt }) {
 
     const newArt = {
       ...formState,
-      likes: 0,
     };
 
     fetch('http://localhost:9292/art', {
@@ -35,15 +34,14 @@ function AddArt({ setArt }) {
       .then((r) => r.json())
       .then((newArt) => {
         setArt((preState) => [...preState, newArt]);
-        history.push('/art');
+        // history.push('/art');
       });
   }
 
   return (
-    <div className="court-form">
-      <form onSubmit={handleSubmit} className="court-form">
-        <div className="court-form">
-        </div>
+    <div className="form">
+      <form onSubmit={handleSubmit} className="form">
+        <div className="form"></div>
 
         <br></br>
         <input
@@ -52,6 +50,15 @@ function AddArt({ setArt }) {
           onChange={handleChange}
           value={formState.name}
           placeholder="Art Name"
+          className="input-text"
+        />
+        <br />
+        <input
+          type="text"
+          name="location"
+          onChange={handleChange}
+          value={formState.location}
+          placeholder="Location"
           className="input-text"
         />
         <br />
@@ -81,15 +88,6 @@ function AddArt({ setArt }) {
           placeholder="Gallery Link"
           className="input-text"
         />
-        {/* <br />
-        <input
-          type="text"
-          name="date-added"
-          onChange={handleChange}
-          value={formState.image}
-          placeholder="Date Added"
-          className="input-text"
-        /> */}
         <br />
         <input
           type="submit"

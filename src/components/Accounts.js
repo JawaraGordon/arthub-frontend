@@ -11,7 +11,6 @@ function Accounts() {
       .then((r) => r.json())
       .then((accountsArr) => {
         setAccounts(accountsArr);
-        console.log(accountsArr);
       });
   }, []);
 

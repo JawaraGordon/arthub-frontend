@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ArtistsCard from './ArtistsCard';
 import Search from './Search';
 
-function Artists({ handleUpdateLike }) {
+function Artists() {
   const [artists, setArtists] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -11,7 +11,6 @@ function Artists({ handleUpdateLike }) {
       .then((r) => r.json())
       .then((artistsArr) => {
         setArtists(artistsArr);
-        // console.log(artistsArr);
       });
   }, []);
 
@@ -20,7 +19,6 @@ function Artists({ handleUpdateLike }) {
       <ArtistsCard
         key={artists.id}
         artists={artist}
-        // handleUpdateLike={handleUpdateLike}
       />
     ));
   }

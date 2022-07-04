@@ -6,9 +6,8 @@ function Buyers() {
   }
 
   return (
-    <div className="court-form">
-      <form onSubmit={handleSubmit} className="court-form">
-        {/* <img src=""></img> */}
+    <div className="form">
+      <form onSubmit={handleSubmit} className="form">
         <br></br>
         <input
           type="text"

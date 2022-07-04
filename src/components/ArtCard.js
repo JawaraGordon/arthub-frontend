@@ -1,11 +1,10 @@
 import React, { useHistory } from 'react';
-// import ArtEditPage from './ArtEditPage'
 
-function ArtCard({ art, setArt }) {
-  console.log(art);
+
+function ArtCard({ art }) {
 
   const { id, name, image_url, genre, location, link } = art;
-
+  // const history = useHistory()
 
   const deleteArt = (artId) => {
     {
@@ -13,9 +12,9 @@ function ArtCard({ art, setArt }) {
         method: 'DELETE',
         headers: { Accept: 'application/json' }
       })
-        // .then(res => res.json())
-        // .then(deletedArt => setArt(deletedArt)
-        // );
+      window.location.reload()
+        // history.push('/art')
+        
     }
   }
 
