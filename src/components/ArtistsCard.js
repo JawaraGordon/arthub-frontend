@@ -11,7 +11,7 @@ function ArtistsCard({ artists }) {
         <div className="title">
           <h2>{name}</h2>
         </div>
-        <img src={avatar} alt={name} className="court-image" />
+        <img src={avatar} alt={name} className="image" />
         <br></br>
         <h4>Email: {email}</h4>
         <h4>Phone: {phone}</h4>

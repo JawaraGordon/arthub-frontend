@@ -29,9 +29,8 @@ body {
 }
 
 .navbar a:hover {
-  background-color: #a81010;
   border: white solid 1px;
-  color: orange;
+  color: #a81010;
   border-radius: 5px;
 }
 
@@ -58,11 +57,9 @@ color: white;
   
 }
 
-@media only screen and (max-width: 500px) {
-  #audio-img  {
-    display: none;
-  }
-}
+/* @media only screen and (max-width: 500px) {
+  
+} */
 
 .search-container {
   display: flex;
@@ -97,7 +94,7 @@ color: white;
   padding: 120px 20px 20px 20px;
   margin: 2rem;
   border-radius: 20px;
-  background: #fff;
+  background: #fff, opacity .8;
   line-height: 19px;
   font-size: 14px;
   text-align: center;
@@ -122,9 +119,9 @@ color: white;
 
 
 .card img{
-  width: 75%;
+  width: 80%;
   height: 100%;
-  
+  border-radius: 20%;
 }
 .list {
   padding: 1rem;
@@ -134,7 +131,7 @@ color: white;
   justify-content: center;
 }
 
-.court-image {
+.image {
   justify-self: center;
   height: 12rem;
   width: auto;
@@ -178,12 +175,12 @@ button {
 button:hover {
   background-color: whitesmoke;
   border: white solid 1px;
-  color: orange;
+  color: #a81010;
 }
 .submit-btn:hover {
   background-color: whitesmoke;
   border: white solid 1px;
-  color: orange;
+  color: #a81010;
 }
 
 .court-form {
