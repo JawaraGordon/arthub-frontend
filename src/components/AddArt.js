@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 function AddArt({ setArt }) {
   const [formState, setFormState] = useState({
@@ -8,8 +8,8 @@ function AddArt({ setArt }) {
     genre: '',
     link: '',
   });
-  const history = useHistory();
-  console.log(history);
+  // const history = useHistory();
+  // console.log(history);
 
   function handleChange(e) {
     setFormState({
@@ -36,7 +36,7 @@ function AddArt({ setArt }) {
       .then((r) => r.json())
       .then((newArt) => {
         setArt((preState) => [...preState, newArt]);
-        history.push('/art');
+        // history.push('/art');
       });
       window.location.reload();
   }
