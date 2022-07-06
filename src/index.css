@@ -29,9 +29,8 @@ body {
 }
 
 .navbar a:hover {
-  border: white solid 1px;
   color: #a81010;
-  border-radius: 5px;
+
 }
 
 .nav-btn{
@@ -41,9 +40,8 @@ body {
 .nav-btn:focus{
   border: 0;
   background-color: whitesmoke;
-  border: white solid 1px;
   color: #a81010;
-  border-radius: 5px;
+
 }
 
 #header-img {

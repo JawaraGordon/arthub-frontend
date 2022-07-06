@@ -8,7 +8,8 @@ function AddArt({ setArt }) {
     genre: '',
     link: '',
   });
-  // const history = useHistory();
+  const history = useHistory();
+  console.log(history);
 
   function handleChange(e) {
     setFormState({
@@ -31,11 +32,13 @@ function AddArt({ setArt }) {
       },
       body: JSON.stringify(newArt),
     })
+    
       .then((r) => r.json())
       .then((newArt) => {
         setArt((preState) => [...preState, newArt]);
-        // history.push('/art');
+        history.push('/art');
       });
+      window.location.reload();
   }
 
   return (

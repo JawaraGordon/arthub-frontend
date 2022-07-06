@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React  from 'react';
 import ArtCard from './ArtCard';
-import AddArt from './AddArt'
 
-function Art({ art }) {
+
+function Art({ art, setArt}) {
   function displayedArt() {
-    return art.map((art) => <ArtCard key={art.id} art={art} />);
+    return art.map((art) => <ArtCard key={art.id} art={art} setArt={setArt}/>);
   }
 
   return (
     <div>
       <div className="card">
         <h2>Join the Gallery</h2>
-        <a href="/addart">
+        <a href="/art/new">
           <img src="https://i.imgur.com/l62vvAz.png" alt="add your art"></img>
         </a>
       </div>

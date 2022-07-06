@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# ArtHub
+
+Find digitals art and music projects. 
+
+Search for your favorite artists. Join the community as a member or as an artist by uploading your own art projects.  
+
+## Description
+
+A React app that uses a Ruby backend to search for artists, art projects and memberships with an API.
+
+Use the navigation bar to display different components of the app. Choices include: 
+
+## Challenges
+
+- Creating an API to communicate with the frontend allowing for CRUD capabilities using ActiveRecord was the toughest part of this project. 
+
+- In the future I want to add a login function .
+
+### How to Install Project
+
+- Fork and clone both the "arthub" front end and backend repos from GitHub
+# Dependencies
+
+- Backend: in the command line type $bundle install
+
+- Backend: in the command line type $rake server
+This will run your server on port http://localhost:9292
+
+- Frontend: in the command line type $npm install react-router-dom@5.3.0
+
+- Frontend: in the command line type $npm install -g
+
+- Frontend: in the command line type $npm start 
+This will run your app on port http://localhost:3000
+
+# Navigating the application
+- Use the navbar to move between areas of the app
+
+- Account: See all active users
+
+- Artists: View and search for artists
+
+- Buyers: Become a member of the community
+
+- Gallery: View a gallery of NFT art projects 
+
+## Setup
+
+`src` folder contains the following files:
+
+```txt
+src/
+├── index.css
+├── index.js
+└── components/
+    ├── Accounts.js
+    ├── AccountsCard.js
+    ├── AddArt.js
+    ├── App.js
+    ├── Art.js
+    ├── ArtCard.js
+    ├── Artists.js
+    ├── ArtistsCard.js
+    ├── Buyers.js
+    ├── Header.js
+    ├── NavBar.js
+    └── Search.js
+```
+
+### index.js
+
+`index.js` loads the `BrowserRouter` component from React Router, as well as `App` as the top level component.
+
+## Resources
+
+- [React Router](https://v5.reactrouter.com/web/guides/quick-start)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+[dbdiagram.io]: https://dbdiagram.io/
 
-In the project directory, you can run:
+[postman download]: https://www.postman.com/downloads/
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[network tab]: https://developer.chrome.com/docs/devtools/network/

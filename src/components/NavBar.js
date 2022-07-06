@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 function NavBar() {
-
-
-
   return (
     <div className="navbar">
-      <NavLink exact to="/accounts">
+      <NavLink exact to="/">
         <button className="nav-btn">
           <h3>Account</h3>
         </button>

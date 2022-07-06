@@ -20,11 +20,12 @@ function App() {
   }, []);
 
   return (
-    <div className="home">
+    <div>
       <Header />
+     
 
       <Switch>
-        <Route exact path="/accounts">
+        <Route exact path="/">
           <Accounts />
         </Route>
 
@@ -36,13 +37,14 @@ function App() {
           <Buyers />
         </Route>
 
-        <Route path="/art">
-          <Art key={art.id} art={art} />
-        </Route>
-
-        <Route path="/addart">
+        <Route path="/art/new">
           <ArtEditPage key={art.id} art={art} setArt={setArt} />
         </Route>
+
+        <Route path="/art">
+          <Art key={art.id} art={art} setArt={setArt}/>
+        </Route>
+
       </Switch>
     </div>
   );
