@@ -1,6 +1,6 @@
 # ArtHub
 
-Find digitals art and music projects. 
+Find digital art and music projects. 
 
 Search for your favorite artists. Join the community as a member or as an artist by uploading your own art projects.  
 
