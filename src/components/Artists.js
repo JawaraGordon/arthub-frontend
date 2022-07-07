@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ArtistsCard from './ArtistsCard';
 import Search from './Search';
 
-function Artists({artists,setArtists}) {
-  // const [artists, setArtists] = useState([]);
+function Artists({artists}) {
   const [searchTerm, setSearchTerm] = useState('');
 
   

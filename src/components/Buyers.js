@@ -1,8 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function Buyers(buyers, setBuyers) {
-
+function Buyers( setBuyers) {
   const [formState, setFormState] = useState({
     name: '',
     avatar: '',
@@ -11,7 +10,14 @@ function Buyers(buyers, setBuyers) {
     account_type: '',
   });
 
-  const history = useHistory()
+  const history = useHistory();
+
+  function handleChange(e) {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    });
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -28,9 +34,9 @@ function Buyers(buyers, setBuyers) {
       body: JSON.stringify(newBuyer),
     })
       .then((r) => r.json())
-      .then((newArt) => {
-        setBuyers((preState) => [...preState, newArt]);
-        history.push('/buyers');
+      .then((newBuyer) => {
+        setBuyers((preState) => [...preState, newBuyer]);
+        history.push('/');
       });
   }
 
@@ -41,32 +47,42 @@ function Buyers(buyers, setBuyers) {
         <input
           type="text"
           name="name"
+          onChange={handleChange}
+          value={formState.name}
           placeholder="First and Last Name"
           className="input-text"
         />
         <br />
         <input
           type="text"
-          name="name"
+          name="avatar"
+          onChange={handleChange}
+          value={formState.avatar}
           placeholder="Image URL"
-          className="input-text"
-        />
-        <br />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
           className="input-text"
         />
         <br />
         <input
           type="location"
           name="location"
+          onChange={handleChange}
+          value={formState.location}
           placeholder="Location"
           className="input-text"
         />
         <br />
+        <input
+          type="email"
+          name="email"
+          onChange={handleChange}
+          value={formState.email}
+          placeholder="Email"
+          className="input-text"
+        />
+        <br />
         <select name="level" className="select">
+          onChange={handleChange}
+          value={formState.account_type}
           <option value="">Choose Your Plan</option>
           <option value="1">Free</option>
           <option value="2">Paid $4.99 Monthly</option>

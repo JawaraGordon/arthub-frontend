@@ -1,7 +1,7 @@
 import React from 'react';
 
 function ArtistsCard({ artists }) {
-  console.log(artists);
+  
 
   const { name, avatar, email, phone, genre } = artists;
 

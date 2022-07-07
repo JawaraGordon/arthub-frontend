@@ -1,7 +1,7 @@
 import React from 'react';
 
 function AccountsCard({ accounts }) {
-  console.log(accounts);
+ 
 
   const { name, account_number, location, account_type } = accounts;
 

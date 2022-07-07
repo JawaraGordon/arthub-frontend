@@ -10,7 +10,7 @@ function ArtEditForm({ artId, onUpdate }) {
     art_id: ' ',
   });
   const history = useHistory();
-  console.log(formData);
+  
 
   useEffect(() => {
     fetch(`http://localhost:9292/art/${artId}`)

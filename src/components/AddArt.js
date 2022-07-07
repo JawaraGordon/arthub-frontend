@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 function AddArt({ setArt, artists, setArtists }) {
-  console.log(artists)
+  
   const [formState, setFormState] = useState({
     name: '',
     image_url: '',
@@ -11,19 +11,6 @@ function AddArt({ setArt, artists, setArtists }) {
     artist_id: '',
   });
   const history = useHistory();
-
-  // function displayArtists() {
-    
-  //   return (
-  //     <select>
-  //         {artists.map(({ name, value }) => (
-  //           <option key={value} value={value}>
-  //             {name}
-  //           </option>
-  //         ))}
-  //       </select>
-  //   );
-  // }
 
   function handleChange(e) {
     setFormState({
@@ -104,18 +91,6 @@ function AddArt({ setArt, artists, setArtists }) {
           className="input-text"
         />
         <br />
-        {/* <input
-          type="number"
-          min={1}
-          max={30}
-          name="artist_id"
-          onChange={handleChange}
-          value={formState.artist_id}
-          placeholder="Artist ID"
-          className="input-text"
-        />
-        <br /> */}
-        
         <select className="select">
           {artists.map(({ name, artist_id }) => (
             <option key={artist_id} value={artist_id}>
