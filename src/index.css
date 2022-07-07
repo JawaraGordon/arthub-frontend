@@ -133,6 +133,11 @@ color: white;
   height: 12rem;
   width: auto;
 }
+.edit-img {
+  justify-self: center;
+  height: 4rem;
+  width: auto;
+}
 
 
 button {
@@ -189,16 +194,41 @@ button:hover {
   font-size: 28px;
 }
 
+.form h3{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-size: 40px;
+}
+
 .form img{
   width: 100%;
   height: auto;
   
 }
-.form input{
+.input{
   padding: 1rem;
+  max-width: 400px;
+  height: auto;
+  margin: auto;
+  
+}
+.input-text{
+  padding: 1rem;
+  max-width: 400px;
+  height: auto;
+  margin: auto;
+  
+}
+.form button{
+  padding: 1rem;
+  margin: 1rem;
   max-width: auto;
   height: auto;
-  
+  align-self: center;
 }
 
 .select {

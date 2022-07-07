@@ -1,15 +1,29 @@
 import React, { useState } from 'react';
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-function AddArt({ setArt }) {
+function AddArt({ setArt, artists, setArtists }) {
+  console.log(artists)
   const [formState, setFormState] = useState({
     name: '',
     image_url: '',
     genre: '',
     link: '',
+    artist_id: '',
   });
-  // const history = useHistory();
-  // console.log(history);
+  const history = useHistory();
+
+  // function displayArtists() {
+    
+  //   return (
+  //     <select>
+  //         {artists.map(({ name, value }) => (
+  //           <option key={value} value={value}>
+  //             {name}
+  //           </option>
+  //         ))}
+  //       </select>
+  //   );
+  // }
 
   function handleChange(e) {
     setFormState({
@@ -32,13 +46,11 @@ function AddArt({ setArt }) {
       },
       body: JSON.stringify(newArt),
     })
-    
       .then((r) => r.json())
       .then((newArt) => {
         setArt((preState) => [...preState, newArt]);
-        // history.push('/art');
+        history.push('/art');
       });
-      window.location.reload();
   }
 
   return (
@@ -91,6 +103,26 @@ function AddArt({ setArt }) {
           placeholder="Gallery Link"
           className="input-text"
         />
+        <br />
+        {/* <input
+          type="number"
+          min={1}
+          max={30}
+          name="artist_id"
+          onChange={handleChange}
+          value={formState.artist_id}
+          placeholder="Artist ID"
+          className="input-text"
+        />
+        <br /> */}
+        
+        <select className="select">
+          {artists.map(({ name, artist_id }) => (
+            <option key={artist_id} value={artist_id}>
+              {name}
+            </option>
+          ))}
+        </select>
         <br />
         <input
           type="submit"
