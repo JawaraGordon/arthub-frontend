@@ -1,8 +1,37 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { useHistory } from 'react-router-dom';
 
-function Buyers() {
+function Buyers(buyers, setBuyers) {
+
+  const [formState, setFormState] = useState({
+    name: '',
+    avatar: '',
+    location: '',
+    email: '',
+    account_type: '',
+  });
+
+  const history = useHistory()
+
   function handleSubmit(e) {
     e.preventDefault();
+
+    const newBuyer = {
+      ...formState,
+    };
+
+    fetch('http://localhost:9292/buyers', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newBuyer),
+    })
+      .then((r) => r.json())
+      .then((newArt) => {
+        setBuyers((preState) => [...preState, newArt]);
+        history.push('/buyers');
+      });
   }
 
   return (
@@ -12,14 +41,14 @@ function Buyers() {
         <input
           type="text"
           name="name"
-          placeholder="First Name"
+          placeholder="First and Last Name"
           className="input-text"
         />
         <br />
         <input
           type="text"
           name="name"
-          placeholder="Last Name"
+          placeholder="Image URL"
           className="input-text"
         />
         <br />
@@ -27,6 +56,13 @@ function Buyers() {
           type="email"
           name="email"
           placeholder="Email"
+          className="input-text"
+        />
+        <br />
+        <input
+          type="location"
+          name="location"
+          placeholder="Location"
           className="input-text"
         />
         <br />

@@ -11,6 +11,7 @@ import ArtEditForm from './ArtEditForm';
 function App() {
   const [art, setArt] = useState([]);
   const [artists, setArtists] = useState([]);
+  const [buyers, setBuyers] = useState([]);
   const [artId, setArtId] = useState(null);
   
 
@@ -28,6 +29,14 @@ function App() {
       .then((r) => r.json())
       .then((artistsArr) => {
         setArtists(artistsArr);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch('http://localhost:9292/buyers')
+      .then((r) => r.json())
+      .then((buyersArr) => {
+        setBuyers(buyersArr);
       });
   }, []);
   
@@ -69,7 +78,9 @@ function App() {
         </Route>
 
         <Route path="/buyers">
-          <Buyers />
+          <Buyers key={buyers.id}
+            buyers={buyers}
+            setBuyers={setBuyers}/>
         </Route>
 
         <Route path="/art/new">
