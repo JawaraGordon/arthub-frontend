@@ -37,6 +37,7 @@ function AddArt({ setArt, artists, setArtists }) {
       .then((newArt) => {
         setArt((preState) => [...preState, newArt]);
         history.push('/art');
+        
       });
   }
 

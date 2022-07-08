@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function Buyers( setBuyers) {
+function Buyers(setBuyers) {
   const [formState, setFormState] = useState({
     name: '',
     avatar: '',
@@ -36,7 +36,8 @@ function Buyers( setBuyers) {
       .then((r) => r.json())
       .then((newBuyer) => {
         setBuyers((preState) => [...preState, newBuyer]);
-        history.push('/');
+        history.push('/art');
+        // window.location.reload();
       });
   }
 

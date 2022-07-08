@@ -1,18 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ArtistsCard from './ArtistsCard';
 import Search from './Search';
 
-function Artists({artists}) {
+function Artists({ artists }) {
   const [searchTerm, setSearchTerm] = useState('');
-
-  
 
   function displayedArtists() {
     return filteredArtists.map((artist) => (
-      <ArtistsCard
-        key={artists.id}
-        artists={artist}
-      />
+      <ArtistsCard key={artists.id} artists={artist} />
     ));
   }
 
@@ -20,11 +15,12 @@ function Artists({artists}) {
     return artist.name.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
-  return <>
-  <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-  <div className="list">{displayedArtists()}</div>;
-  </>
-  
+  return (
+    <>
+      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <div className="list">{displayedArtists()}</div>;
+    </>
+  );
 }
 
 export default Artists;
