@@ -1,8 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-function ArtCard({ art, onDelete, editMode, artists }) {
-  const { id, name, image_url, genre, location, link, artist_id } = art;
+function ArtCard({ art, onDelete, editMode }) {
+  const { id, name, image_url, genre, location, link } = art;
   
   const history = useHistory()
 
