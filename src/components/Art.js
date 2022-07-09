@@ -2,10 +2,10 @@ import React  from 'react';
 import ArtCard from './ArtCard';
 
 
-function Art({ art, setArt, onDelete, editMode, artists}) {
+function Art({ art, setArt, onDeleteArt, editMode, artists}) {
   
   function displayedArt() {
-    return art.map((art) => <ArtCard key={art.id} art={art} setArt={setArt} artists={artists} editMode={editMode} onDelete={onDelete}/>);
+    return art.map((art) => <ArtCard key={art.id} art={art} setArt={setArt} artists={artists} editMode={editMode} onDeleteArt={onDeleteArt}/>);
   }
 
   return (

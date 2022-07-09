@@ -1,18 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import AccountsCard from './AccountsCard';
 
 
-function Accounts() {
-  const [accounts, setAccounts] = useState([]);
- 
-
-  useEffect(() => {
-    fetch('http://localhost:9292/accounts')
-      .then((r) => r.json())
-      .then((accountsArr) => {
-        setAccounts(accountsArr);
-      });
-  }, []);
+function Accounts({accounts}) {
+  
 
   function displayedAccounts() {
     return accounts.map((account) => (

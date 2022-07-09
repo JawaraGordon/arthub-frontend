@@ -5,14 +5,23 @@ function AddArt({ setArt, artists, setArtists }) {
   
   const [formState, setFormState] = useState({
     name: '',
+    location: '',
     image_url: '',
     genre: '',
     link: '',
     artist_id: '',
   });
   const history = useHistory();
+  
 
   function handleChange(e) {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  let handleArtistChange = (e) => {
     setFormState({
       ...formState,
       [e.target.name]: e.target.value,
@@ -87,17 +96,16 @@ function AddArt({ setArt, artists, setArtists }) {
           type="text"
           name="link"
           onChange={handleChange}
-          value={formState.image}
+          value={formState.link}
           placeholder="Gallery Link"
           className="input-text"
         />
         <br />
-        <select className="select">
-          {artists.map(({ name, artist_id }) => (
-            <option key={artist_id} value={artist_id}>
-              {name}
-            </option>
-          ))}
+        <select className="select"
+        onChange={handleArtistChange}>
+            <option value="Choose Artist">Choose Artist</option>
+            {artists.map((artist) => <option key={artist.name} value={artist.id}>{artist.name}</option>)}
+        
         </select>
         <br />
         <input

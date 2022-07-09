@@ -44,15 +44,28 @@ body {
 
 }
 
-#header-img {
+
+.header {
   display: flex;
   justify-content: space-between;
   background: #a81010;
-color: white; 
+  color: white; 
   height: 8rem;
   padding: 1rem;
   overflow: hidden;
+}
+
+.header-img {
+  display: flex;
   
+  
+}
+.header h1 {
+  justify-content: right;
+  color: white; 
+  height: 8rem;
+  padding: 1rem;
+  overflow: hidden;
 }
 
 

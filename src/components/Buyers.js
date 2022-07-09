@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import BuyerCard from './BuyerCard';
 
-function Buyers(setBuyers) {
+function Buyers({ buyers, setBuyers, onDeleteBuyers }) {
   const [formState, setFormState] = useState({
     name: '',
     avatar: '',
@@ -36,9 +37,13 @@ function Buyers(setBuyers) {
       .then((r) => r.json())
       .then((newBuyer) => {
         setBuyers((preState) => [...preState, newBuyer]);
-        history.push('/art');
-        // window.location.reload();
+        history.push('/buyers');
+        window.location.reload();
       });
+  }
+
+  function displayedBuyers() {
+    return buyers.map((buyer) => <BuyerCard key={buyers.id} buyers={buyer} onDeleteBuyers={onDeleteBuyers}/>);
   }
 
   return (
@@ -81,13 +86,17 @@ function Buyers(setBuyers) {
           className="input-text"
         />
         <br />
-        <select name="level" className="select">
+        <select
+          type="account_type"
+          name="account_type"
+          className="select"
           onChange={handleChange}
           value={formState.account_type}
+        >
           <option value="">Choose Your Plan</option>
-          <option value="1">Free</option>
-          <option value="2">Paid $4.99 Monthly</option>
-          <option value="3">Artist</option>
+          <option value="Free">Free</option>
+          <option value="Paid $4.99 Monthly">Paid $4.99 Monthly</option>
+          <option value="Artist">Artist</option>
         </select>
         <br />
 
@@ -98,6 +107,7 @@ function Buyers(setBuyers) {
           className="submit-btn"
         />
       </form>
+      <div className="list">{displayedBuyers()}</div>
     </div>
   );
 }
