@@ -8,7 +8,7 @@ Search for your favorite artists. Join the community as a member or as an artist
 
 A React app that uses a Ruby backend to search for artists, art projects and memberships with an API.
 
-Use the navigation bar to display different components of the app. Choices include: 
+Use the navigation bar to display different components of the app. 
 
 ## Challenges
 
